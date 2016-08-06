@@ -28,4 +28,4 @@ A/: Commit is all the work recorded with changes in the saved in a repository. A
 
 * What is a merge conflict?
 
-A/:Changes that get in conflict with someone else's changes. This happens from one's working directory or the staging area's files are being written over it.   
+A/:Changes that get in conflict with someone else's changes. This happens from one's working directory or the staging area's files are being written over it. Keeping a clean message allows others to work in the code w/o merging conflicts.  
