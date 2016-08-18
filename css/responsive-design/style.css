@@ -53,3 +53,41 @@ figcaption {
 
 }*/
 /*size extire page above*/
+
+/*
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+*/
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 15px;
+  }
+}
+
+
+@media screen and (max-width: 420px) {
+  p {
+    font-size: 8px;
+    font-family: Arial;
+  }
+}
+
+
+@media screen and (max-width: 420px) {
+  blockquote {
+    font-size: 8px;
+    font-family: Georgia;
+  }
+}
+/*
+@media only screen and (min-width: 1196px){
+  #bear{
+    left:800px;  }
+    }*/
+
+
