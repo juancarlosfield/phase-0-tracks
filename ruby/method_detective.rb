@@ -57,8 +57,7 @@ a
 # "z".<???>
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)
-z = "z"         
-z.replace "122".to_f   
+"z".ord  
 
 
 
