@@ -1,4 +1,4 @@
-# Create a new list
+# Create a new list#
 # Add an item with a quantity to the list
 # Remove an item from the list
 # Update quantities for items in your list
