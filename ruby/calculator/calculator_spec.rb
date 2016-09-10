@@ -23,5 +23,9 @@ describe Calculator do
 
   it "multiplies two integers" do
     expect(calculator.multiply(2,3)).to eq 6
+
+  it "divides two integers" do
+    expect(calculator.divide(8,4)).to eq 2
+
   end
 end
