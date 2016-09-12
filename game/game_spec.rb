@@ -1,4 +1,4 @@
-# game_spec.rb 
+## game_spec.rb 
 require_relative 'game'
 
 describe Game do

@@ -1,4 +1,4 @@
-# game.rb
+## game.rb
 
 # To submit this challenge, turn in the URL of your program file (not your test file or project directory).
 
