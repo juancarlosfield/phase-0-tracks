@@ -1,0 +1,296 @@
+// ♥ sqlite3 solo_project
+SQLite version 3.8.10.2 2015-05-20 18:17:19
+Enter ".help" for usage hints.
+sqlite> .tables
+sqlite> CREATE TABLE DriverTable (DL# INT, name VARCHAR (255), DOB VARCHAR(255),OrganDonor BOOLEAN );
+Error: unrecognized token: "#"
+sqlite> CREATE TABLE DriverTable (DL_Num INT, name VARCHAR (255), DOB VARCHAR(255),OrganDonor BOOLEAN );
+sqlite> .tables
+DriverTable
+sqlite> INSERT INTO DriverTable (DL_Num INT, name VARCHAR (255), DOB VARCHAR(255),OrganDonor BOOLEAN) VALUES (Address_key INT);
+Error: near "INT": syntax error
+sqlite> INSERT INTO DriverTable (Address_key INT);
+Error: near "INT": syntax error
+sqlite> CREATE TABLE DriverTable (DL_Num INT, name VARCHAR (255), DOB VARCHAR(255),OrganDonor BOOLEAN, Address_key INT );
+Error: table DriverTable already exists
+sqlite> .tables
+DriverTable
+sqlite> SELECT * FROM DriverTable;
+sqlite>
+sqlite> INSERT INTO solo_project DriverTable(DL_Num, name, DOB, OrganDonor, Address_key) VALUES (12345, "JC", "10-13-83", true, 1 );
+Error: near "DriverTable": syntax error
+sqlite> INSERT INTO  DriverTable(DL_Num, name, DOB, OrganDonor, Address_key) VALUES (12345, "JC", "10-13-83", true, 1 );
+Error: table DriverTable has no column named Address_key
+sqlite> INSERT INTO  DriverTable(DL_Num, name, DOB, OrganDonor, Address_key) VALUES (12345, "JC", "10-13-83", true, 1 );
+Error: table DriverTable has no column named Address_key
+sqlite> .help
+.backup ?DB? FILE      Backup DB (default "main") to FILE
+.bail on|off           Stop after hitting an error.  Default OFF
+.binary on|off         Turn binary output on or off.  Default OFF
+.clone NEWDB           Clone data into NEWDB from the existing database
+.databases             List names and files of attached databases
+.dbinfo ?DB?           Show status information about the database
+.dump ?TABLE? ...      Dump the database in an SQL text format
+                         If TABLE specified, only dump tables matching
+                         LIKE pattern TABLE.
+.echo on|off           Turn command echo on or off
+.eqp on|off            Enable or disable automatic EXPLAIN QUERY PLAN
+.exit                  Exit this program
+.explain ?on|off?      Turn output mode suitable for EXPLAIN on or off.
+                         With no args, it turns EXPLAIN on.
+.fullschema            Show schema and the content of sqlite_stat tables
+.headers on|off        Turn display of headers on or off
+.help                  Show this message
+.import FILE TABLE     Import data from FILE into TABLE
+.indexes ?TABLE?       Show names of all indexes
+                         If TABLE specified, only show indexes for tables
+                         matching LIKE pattern TABLE.
+.limit ?LIMIT? ?VAL?   Display or change the value of an SQLITE_LIMIT
+.log FILE|off          Turn logging on or off.  FILE can be stderr/stdout
+.mode MODE ?TABLE?     Set output mode where MODE is one of:
+                         ascii    Columns/rows delimited by 0x1F and 0x1E
+                         csv      Comma-separated values
+                         column   Left-aligned columns.  (See .width)
+                         html     HTML <table> code
+                         insert   SQL insert statements for TABLE
+                         line     One value per line
+                         list     Values delimited by .separator strings
+                         tabs     Tab-separated values
+                         tcl      TCL list elements
+.nullvalue STRING      Use STRING in place of NULL values
+.once FILENAME         Output for the next SQL command only to FILENAME
+.open ?FILENAME?       Close existing database and reopen FILENAME
+.output ?FILENAME?     Send output to FILENAME or stdout
+.print STRING...       Print literal STRING
+.prompt MAIN CONTINUE  Replace the standard prompts
+.quit                  Exit this program
+.read FILENAME         Execute SQL in FILENAME
+.restore ?DB? FILE     Restore content of DB (default "main") from FILE
+.save FILE             Write in-memory database into FILE
+.scanstats on|off      Turn sqlite3_stmt_scanstatus() metrics on or off
+.schema ?TABLE?        Show the CREATE statements
+                         If TABLE specified, only show tables matching
+                         LIKE pattern TABLE.
+.separator COL ?ROW?   Change the column separator and optionally the row
+                         separator for both the output mode and .import
+.shell CMD ARGS...     Run CMD ARGS... in a system shell
+.show                  Show the current values for various settings
+.stats on|off          Turn stats on or off
+.system CMD ARGS...    Run CMD ARGS... in a system shell
+.tables ?TABLE?        List names of tables
+                         If TABLE specified, only list tables matching
+                         LIKE pattern TABLE.
+.timeout MS            Try opening locked tables for MS milliseconds
+.timer on|off          Turn SQL timer on or off
+.trace FILE|off        Output each SQL statement as it is run
+.vfsname ?AUX?         Print the name of the VFS stack
+.width NUM1 NUM2 ...   Set column widths for "column" mode
+                         Negative values right-justify
+sqlite> DROP TABLE DriverTable;
+sqlite> .tables
+sqlite> CREATE TABLE DriverTable (DL_Num INT, name VARCHAR (255), DOB VARCHAR(255), OrganDonor BOOLEAN, Address_key INT );
+sqlite> .tables
+DriverTable
+sqlite> INSERT INTO  DriverTable(DL_Num, name, DOB, OrganDonor, Address_key) VALUES (12345, "JC", "10-13-83", true, 1 );
+Error: no such column: true
+sqlite> INSERT INTO  DriverTable(DL_Num, name, DOB, OrganDonor, Address_key) VALUES (12345, "JC", "10-13-83", true, 1 );
+Error: no such column: true
+sqlite> INSERT INTO  DriverTable(DL_Num, name, DOB, OrganDonor, Address_key) VALUES (12345, "JC", "10-13-83", "true", 1 );
+sqlite> SELECT * FROM DriverTable;
+12345|JC|10-13-83|true|1
+sqlite> INSERT INTO  DriverTable(DL_Num, name, DOB, OrganDonor, Address_key) VALUES (67890, "EF", "02-16-75", true, 2 );
+Error: no such column: true
+sqlite> INSERT INTO  DriverTable(DL_Num, name, DOB, OrganDonor, Address_key) VALUES (67890, "EF", "02-16-75", "true", 2 );
+sqlite> SELECT * FROM DriverTable;                                              12345|JC|10-13-83|true|1
+67890|EF|02-16-75|true|2
+sqlite> INSERT INTO  DriverTable(DL_Num, name, DOB, OrganDonor, Address_key) VALUES (18229, "AF", "09-26-53", "true", 3 );
+sqlite> SELECT * FROM DriverTable;
+12345|JC|10-13-83|true|1
+67890|EF|02-16-75|true|2
+18229|AF|09-26-53|true|3
+sqlite> CREATE TABLE DriverAddress(Address_key INT, Address VARCHAR(255), City VARCHAR(255), State VARCHAR(255), ZipCode INT, YearsLived);
+sqlite> CREATE TABLE DriverAddress(Address_key INT, Address VARCHAR(255), City VARCHAR(255), State VARCHAR(255), ZipCode INT, YearsLived VARCHAR(255));
+Error: table DriverAddress already exists
+sqlite> DROP TABLE DriverAddress;
+sqlite> CREATE TABLE DriverAddress(Address_key INT, Address VARCHAR(255), City VARCHAR(255), State VARCHAR(255), ZipCode INT, YearsLived VARCHAR(255));
+sqlite> .tables
+DriverAddress  DriverTable
+sqlite> INSERT INTO DriverAddress(sqlite> Address_key
+   ...> ;
+Error: near "Address_key": syntax error
+sqlite> .tables
+DriverAddress  DriverTable
+sqlite> INSERT INTO DriverAddress(Address_key, Address, City, State, ZipCode, YearsLived)VALUES(1, "80 Seagull Dr",  "Richmond", 94804, 1);
+Error: 5 values for 6 columns
+sqlite> INSERT INTO DriverAddress(Address_key, Address, City, State, ZipCode, YearsLived)VALUES(1a, "80 Seagull Dr",  "Richmond", 94804, 1);
+Error: unrecognized token: "1a"
+sqlite> INSERT INTO DriverAddress(Address_key, Address, City, State, ZipCode, YearsLived)VALUES(1, "80 Seagull Dr",  "Richmond", 94804, 1.0);
+Error: 5 values for 6 columns
+sqlite> INSERT INTO DriverAddress(Address_key, Address, City, State, ZipCode, YearsLived)VALUES(1, "80 Seagull Dr",  "Richmond", "CA", 94804, 1.0);
+sqlite> SELECT * FROM DriverAddress;
+1|80 Seagull Dr|Richmond|CA|94804|1.0
+sqlite> INSERT INTO DriverAddress(Address_key, Address, City, State, ZipCode, YearsLived)VALUES(11, "1456 31st Dr #10H",  "Astoria", "NY", 10006, 2.7);
+sqlite> SELECT * FROM DriverAddress;
+1|80 Seagull Dr|Richmond|CA|94804|1.0
+11|1456 31st Dr #10H|Astoria|NY|10006|2.7
+sqlite> SELECT * FROM DriverAddress;
+1|80 Seagull Dr|Richmond|CA|94804|1.0
+11|1456 31st Dr #10H|Astoria|NY|10006|2.7
+sqlite> SELECT * FROM DriverAddress;
+1|80 Seagull Dr|Richmond|CA|94804|1.0
+11|1456 31st Dr #10H|Astoria|NY|10006|2.7
+sqlite> SELECT * FROM DriverTable;
+12345|JC|10-13-83|true|1
+67890|EF|02-16-75|true|2
+18229|AF|09-26-53|true|3
+sqlite> UPDATE DriverAddress SET Address_key=1 WHERE DL_Num=12345;
+Error: no such column: DL_Num
+sqlite> SELECT * FROM DriverTable;
+12345|JC|10-13-83|true|1
+67890|EF|02-16-75|true|2
+18229|AF|09-26-53|true|3
+sqlite> SELECT * FROM DriverAddress;
+1|80 Seagull Dr|Richmond|CA|94804|1.0
+11|1456 31st Dr #10H|Astoria|NY|10006|2.7
+sqlite> UPDATE DriverAddress SET Address_key=1 WHERE address="1456 31st Dr #10H";
+sqlite> SELECT * FROM DriverAddress;
+1|80 Seagull Dr|Richmond|CA|94804|1.0
+1|1456 31st Dr #10H|Astoria|NY|10006|2.7
+sqlite> INSERT INTO DriverAddress(Address_key, Address, City, State, ZipCode, YearsLived)VALUES(2, "1456 31st Dr #10H",  "Astoria", "NY", 10006, 4.0);
+sqlite> INSERT INTO DriverAddress(Address_key, Address, City, State, ZipCode, YearsLived)VALUES(1, "8267 Austin St #312",  "Kew Gardens", "NY", 11415, 8.0);
+sqlite> INSERT INTO DriverAddress(Address_key, Address, City, State, ZipCode, YearsLived)VALUES(3, "2924 21st #3i",  "Astoria", "NY", 10005, 0.5);
+sqlite> SELECT * FROM DriverAddress;
+1|80 Seagull Dr|Richmond|CA|94804|1.0
+1|1456 31st Dr #10H|Astoria|NY|10006|2.7
+2|1456 31st Dr #10H|Astoria|NY|10006|4.0
+1|8267 Austin St #312|Kew Gardens|NY|11415|8.0
+3|2924 21st #3i|Astoria|NY|10005|0.5
+sqlite>
+sqlite>
+sqlite> SELECT * FROM DriverTable;
+12345|JC|10-13-83|true|1
+67890|EF|02-16-75|true|2
+18229|AF|09-26-53|true|3
+sqlite> .exit
+
+****************************************************************
+other codes used:
+.exit
+sqlite> .tables
+sqlite> CREATE TABLE DriverTable (DL_Num INT, name VARCHAR (255), DOB VARCHAR(255),OrganDonor BOOLEAN );
+sqlite> INSERT INTO DriverTable (DL_Num INT, name VARCHAR (255), DOB VARCHAR(255),OrganDonor BOOLEAN) VALUES (Address_key INT);
+sqlite> CREATE TABLE DriverTable (DL_Num INT, name VARCHAR (255), DOB VARCHAR(255),OrganDonor BOOLEAN, Address_key INT );
+sqlite> SELECT * FROM DriverTable;
+sqlite> INSERT INTO solo_project DriverTable(DL_Num, name, DOB, OrganDonor, Address_key) VALUES (12345, "JC", "10-13-83", true, 1 );
+sqlite> INSERT INTO  DriverTable(DL_Num, name, DOB, OrganDonor, Address_key) VALUES (12345, "JC", "10-13-83", true, 1 );
+sqlite> .help
+sqlite> DROP TABLE DriverTable;
+sqlite> INSERT INTO  DriverTable(DL_Num, name, DOB, OrganDonor, Address_key) VALUES (67890, "EF", "02-16-75", "true", 2 );
+sqlite> CREATE TABLE DriverAddress(Address_key INT, Address VARCHAR(255), City VARCHAR(255), State VARCHAR(255), ZipCode INT, YearsLived VARCHAR(255));
+sqlite> SELECT * FROM DriverAddress;
+sqlite> SELECT * FROM DriverTable;
+sqlite> UPDATE DriverAddress SET Address_key=1 WHERE address="1456 31st Dr #10H";
+
+
+Release 3: Research on Your Own
+****************************************************************
+http://www.tutorialspoint.com/sqlite/sqlite_using_joins.htm
+****************************************************************
+kinds of joins: 
+SQL defines three major types of joins −
+
+The CROSS JOIN
+The INNER JOIN
+The OUTER JOIN
+
+The CROSS JOIN
+A CROSS JOIN matches every row of the first table with every row of the second table. If the input tables have x and y columns, respectively, the resulting table will have x*y columns. Because CROSS JOINs have the potential to generate extremely large tables, care must be taken to only use them when appropriate.
+
+The INNER JOIN
+A INNER JOIN creates a new result table by combining column values of two tables (table1 and table2) based upon the join-predicate.
+
+The OUTER JOIN
+The OUTER JOIN is an extension of the INNER JOIN. Though SQL standard defines three types of OUTER JOINs: LEFT, RIGHT, and FULL but SQLite only supports the LEFT OUTER JOIN.
+
+
+**********************************************************************
+sqlite> .tables
+DriverAddress  DriverTable
+sqlite> CREATE TABLE housing(Name VARCHAR(255), Owned/Rent VARCHAR(255),  Still_Manage:  BOOLEAN, Address_key INT);
+Error: near "/": syntax error
+sqlite> CREATE TABLE housing(Name VARCHAR(255), Owns_or_Rents VARCHAR(255),  Still_Manage:  BOOLEAN, Address_key INT);
+Error: unrecognized token: ":"
+sqlite> CREATE TABLE housing(Name VARCHAR(255), Owns_or_Rents VARCHAR(255),  Still_Manage  BOOLEAN, Address_key INT);
+sqlite> INSERT INTO(Name, Owns_or_Rents, Still_Manage, Address_key) VALUES("JC", "Owns", "true", 1);
+Error: near "(": syntax error
+sqlite> INSERT INTO houseing(Name, Owns_or_Rents, Still_Manage, Address_key) VALUES("JC", "Owns", "true", 1);
+Error: no such table: houseing
+sqlite> INSERT INTO housing(Name, Owns_or_Rents, Still_Manage, Address_key) VALUES("JC", "Owns", "true", 1);
+sqlite> SELECT * FROM housing;
+JC|Owns|true|1
+sqlite> INSERT INTO houseing(Name, Owns_or_Rents, Still_Manage, Address_key) VALUES("EF", "Owns", "true", 2);
+Error: no such table: houseing
+sqlite> INSERT INTO housing(Name, Owns_or_Rents, Still_Manage, Address_key) VALUES("EF", "Owns", "true", 2);
+sqlite> SELECT * FROM housing;
+JC|Owns|true|1
+EF|Owns|true|2
+sqlite> CREATE TABLE cars(Have_a_car BOOLEAN, Car_year INT, Address_key INT);
+sqlite> INSERT INTO cars(Have_a_car BOOLEAN, Car_year INT, Address_key INT) VALUES ("true", 2017, 1);
+Error: near "BOOLEAN": syntax error
+sqlite> INSERT INTO cars(Have_a_car, Car_year, Address_key) VALUES ("true", 2017, 1);
+sqlite> INSERT INTO cars(Have_a_car, Car_year, Address_key) VALUES ("false", 2017, 2);
+sqlite> SELECT * FROM cars;
+true|2017|1
+false|2017|2
+sqlite> SELECT * FROM housing;
+JC|Owns|true|1
+EF|Owns|true|2
+sqlite> SELECT Name, Owns_or_Rents, Still_Manage, Address_key FROM housing CROSS JOIN cars;
+Error: ambiguous column name: Address_key
+sqlite> SELECT Have_a_car, Car_year, Address_key FROM cars CROSS JOIN housing;
+Error: ambiguous column name: Address_key
+sqlite> DROP TABLE cars;
+sqlite> .tables
+DriverAddress  DriverTable    housing
+sqlite> CREATE TABLE cars(Mark VARCHAR(255), Color);
+sqlite> INSERT INTO cars(Mark, Color) VALUES ("Mitsubishi", "Orange");
+sqlite> SELECT * FROM cars;
+Mitsubishi|Orange
+sqlite> SELECT Mark, Color FROM cars CROSS JOIN housing;
+Mitsubishi|Orange
+Mitsubishi|Orange
+sqlite> 
+
+
+**********************************************************************
+
+
+nothing added to commit but untracked files present (use "git add" to track)
+[16:45:45] (Build_database8.3_solo) solo_project
+// ♥ sqlite3 solo_project
+SQLite version 3.8.10.2 2015-05-20 18:17:19
+Enter ".help" for usage hints.
+sqlite> .tables
+DriverAddress  DriverTable    cars           housing
+sqlite> SELECT * FROM DriverAddress;
+1|80 Seagull Dr|Richmond|CA|94804|1.0
+1|1456 31st Dr #10H|Astoria|NY|10006|2.7
+2|1456 31st Dr #10H|Astoria|NY|10006|4.0
+1|8267 Austin St #312|Kew Gardens|NY|11415|8.0
+3|2924 21st #3i|Astoria|NY|10005|0.5
+sqlite>
+sqlite>
+sqlite> SELECT * FROM DriverTable;
+12345|JC|10-13-83|true|1
+67890|EF|02-16-75|true|2
+18229|AF|09-26-53|true|3
+sqlite>
+sqlite>
+sqlite> SELECT * FROM cars;
+Mitsubishi|Orange
+sqlite>
+sqlite>
+sqlite> SELECT * FROM housing;
+JC|Owns|true|1
+EF|Owns|true|2
+sqlite>
