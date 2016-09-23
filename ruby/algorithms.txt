@@ -1,0 +1,63 @@
+#Release 0: Equip Your New Robot
+
+## Write the algorithm for using an elevator. Remember, robots are not smart at all, so you'll have to spell everything out. For instance, how will your robot figure out which floor button to press? 
+
+- elevator = floor.
+- floor = .# + floor.
+- scope = lobby(1st floor) < 2nd && 9th < penhouse(10th floor).
+- Every button is a floor. 
+- lobby button is 1st floor. 
+- penhouse button is last floor.
+- You only press the button you are told. 
+- Each floor is a button. 
+- If you are told a # with the word floor right after, press that button.
+- when someone enters in the elevator ask, "which floor please?"
+- Else adivise "this elevator will remain at the Lobby till further instructions." 
+- Always default with Lobby button.
+         
+
+
+
+#Release 1: Find a Real-Life Algorithm
+
+## day = CommonDayLike:
+- before CommonDayLike starts set priorities for NewDay:
+- above priorities: Bubu(wife) 
+- happy wife == happy me.  
+
+- 1st of priorities: 
+  -DBC(myPresent/myFture). 
+- other_priorities: (new house, food, family, Mason(puppy), gym).
+- miscellaneous: online game, respond to media channels. 
+
+- 3am to 4am: 
+-    pipi time. 
+-    Walk slow. 
+-    DO NOT WAKE UP THE PUPPY!!! 
+-    Remember my dreams 
+
+- 6am Puppy starts to cry. Time to walk him out to go pipi. 
+- 6-7am snuggle with Bubu and puppy/ start making coffee/ get ready to workout. 
+- 7am meditation  ( http://www.bing.com/videos/search?q=how+to+manifest+anything&view=detail&mid=B834BBB7092B7AA3F80DB834BBB7092B7AA3F80D&FORM=VIRE ) 
+- 7:30am head to the gym. 
+- 7:50am put the Daily Show in my phone while doing 30 mins in the eliptical. 
+- 8:45am call my mother make sure she is ok. 
+- 9:00am have breakfast/ check my emails. 
+- 10:00am DBC 
+- 12:30pm lunch/ clean the kitchen/ follow up with other_priorities
+- 1:30pm  DBC
+- 6/7 pm Stop everything. Check on the day.
+- 7:00pm  start planning xyz.  
+- 8:00 Fill out any undone miscellaneous work.
+- 9:30pm Start getting ready for bed. 
+- 10:00pm Goodnitezzz! 
+
+
+
+
+
+
+
+
+
+
