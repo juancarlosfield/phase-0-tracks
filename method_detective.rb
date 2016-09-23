@@ -1,3 +1,5 @@
+
+
 ## Replace in the "<???>" with the appropriate method (and arguments, if any).
 #"hope".to_s
 "living".to_s
@@ -62,12 +64,9 @@ squeeze([other_str]*) → new_str click to toggle source
 
 
 
+#
 
-
-
-
-
-## "z".<???>
+### "z".<???>
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)
 "z".ord  
@@ -77,3 +76,4 @@ squeeze([other_str]*) → new_str click to toggle source
 # "How many times does the letter 'a' appear in this string?".<???>
 # => 4
 "How many times does the letter 'a' appear in this string?".count("a")
+
