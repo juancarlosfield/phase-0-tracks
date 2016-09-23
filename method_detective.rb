@@ -62,6 +62,7 @@ squeeze([other_str]*) → new_str click to toggle source
 
 
 
+#
 
 ### "z".<???>
 # => 122 
