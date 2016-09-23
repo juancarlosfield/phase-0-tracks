@@ -64,9 +64,6 @@ squeeze([other_str]*) → new_str click to toggle source
 
 
 
-
-
-
 ### "z".<???>
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)
