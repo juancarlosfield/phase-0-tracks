@@ -54,7 +54,7 @@ user = user.to_i
          # Release 4 
          def allergies
             loop do 
-            puts "Please name any allergies, one at a time."
+            puts "Please name any allergies, one at a time. Type -done- when done."
             answer = gets.chomp
             break if answer == "done" 
         end
