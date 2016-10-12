@@ -1,5 +1,5 @@
 
-# This was done by github users alinadin09 and juancarlosfield
+# This was done by github users duffyd and juancarlosfield
 
 # In phase,-0-tracks/ruby/iteration.rb, write your own method that takes a block. 
 # Your method should print out a status message before and after running the block. 
