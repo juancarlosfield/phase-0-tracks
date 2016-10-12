@@ -29,6 +29,12 @@ def suspect(a, b)
 # => "STOP! YOU’RE UNDER ARREST!"
 "Stop! You’re under arrest!".upcase
 
+stop = "stop you are under arrest" # this is another way. making a method
+def pol(stop)
+alert = "stop you are under arrest".upcase
+end
+pol(stop)
+
 # "the usual".<???>
 #=> "the usual suspects"
 "the usual" << " suspects"
@@ -38,7 +44,13 @@ def suspect(a, b)
 " suspects".prepend
 a = " suspects"
 a.prepend("the usual") 
-a                   
+a    
+suspects = " suspects"
+def suspects(suspects)
+	 suspects.prepend("the usual") 
+	 
+end 
+suspects(suspects)
 
 # "The case of the disappearing last letter".<???>
 # => "The case of the disappearing last lette"
@@ -48,6 +60,12 @@ a
 # => "he mystery of the missing first letter"
 "The mystery of the missing first letter".slice(1..39)
 # this is my comment note #    "The mystery of the missing first letter".size
+
+def first_letter(letter)
+var = "T is the letter i took"
+var[1..22]
+end
+first_letter("T")
 
 
 # "Elementary,    my   dear        Watson!".<???>
