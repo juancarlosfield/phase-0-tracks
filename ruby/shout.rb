@@ -30,25 +30,24 @@ p Shout.yelling_happily("Sometimes I don't!")
 
 
 
+module Elliot 
+  def mr_robot(language)
+ 	 " he works in #{language} at the computer firm"
+  end
+  
+end 
 
 
+class Republican
+	include Elliot
+end 
 
+class Democrat  
+	include Elliot
+end 
 
-# class Shouting
-#   include Shout
-# end
-# shout = Shouting.new
-# shout.self.yell_angrily
-# shout.self.yelling_happily
+republican = Republican.new 
+republican.mr_robot(".rb")
 
-
-#  Shout.yell_angrily
-#  shout.yelling_happily
-
-# words :happy, :extraordinary, :amazing
-# shout = Shout.new
-# Mod.yell_angrily = "happy, extra happy , waow i m happy "
-# Mod.yelling_happily = "im coding i got the answer. Yay"
-
-
-
+democrat = Democrat.new 
+democrat.mr_robot(".py")
